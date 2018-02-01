@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="jlApp">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Angular Data</title>
@@ -8,18 +8,13 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/lib/angular/angular.min.js"></script>
 	<script src="js/lib/angular/angular-route.min.js"></script>
-	<!--script src="js/lib/angular/angular-animate.min.js"></script-->
-	
-	<script>
-		// Initialize mlab
-		
-	</script>
+
 	
 	<script src="js/app.js"></script>
 	<script src="js/controllers/allControllers.js"></script>
 
 </head>
-<body>
+<body ng-app="jlApp">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="#">Navbar</a>
@@ -35,17 +30,29 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{products}}">products</a>
 			</li>
-
+			
 		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+		
 	</div>
 </nav>
 
 <main ng-view></main>
-
+<div class="container" ng-controller="ProductsController" >
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th scope="col">Product ID</th>
+			<th scope="col">Product Name</th>
+			<th scope="col">Product SKU</th>
+		</tr>
+		</thead>
+		<tr ng-repeat="product in products">
+			<td scope="col">{{ product._id["$oid"] }}</td>
+			<td scope="col">{{ product.name }}</td>
+			<td scope="col">{{ product.sku}}</td>
+		</tr>
+	</table>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- jQuery library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><!-- Popper JS -->
 <script src="js/lib/bootstrap/bootstrap.js"></script>
