@@ -1,7 +1,16 @@
-<table class="table table-striped">
-	<tr ng-repeat="products in data">
-		<td>{{ products.prod_id }}</td>
-		<td>{{ products.prodName }}</td>
-		<td>{{ products.prodSku}}</td>
-	</tr>
-</table>
+<div class="container" ng-controller="ProductsController" >
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th scope="col">Product ID</th>
+			<th scope="col">Product Name</th>
+			<th scope="col">Product SKU</th>
+		</tr>
+		</thead>
+		<tr ng-repeat="product in products">
+			<td scope="col">{{ product._id["$oid"] }}</td>
+			<td scope="col">{{ product.name }}</td>
+			<td scope="col">{{ product.sku}}</td>
+		</tr>
+	</table>
+</div>

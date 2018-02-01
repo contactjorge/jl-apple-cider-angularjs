@@ -14,17 +14,9 @@ jlApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/', {
 		templateUrl: 'views/home.html',
-		controller: 'HomeController'
+		controller: 'ProductsController'
 	}).
 	when('/products', {
-		templateUrl: 'views/product.html',
-		controller: 'ProductsController'
-	}).
-	when('/product/:uId/:mId', {
-		templateUrl: 'views/products.html',
-		controller: 'ProductsController'
-	}).
-	when('/product/:uId/:mId/checkinsList', {
 		templateUrl: 'views/products.html',
 		controller: 'ProductsController'
 	}).
@@ -32,3 +24,12 @@ jlApp.config(['$routeProvider', function($routeProvider) {
 		redirectTo: '/'
 	});
 }]);
+
+/*when('/product/:uId/:mId', {
+		templateUrl: 'views/product.html',
+		controller: 'ProductsController'
+	}).
+	when('/product/:uId/:mId/checkinsList', {
+		templateUrl: 'views/product.html',
+		controller: 'ProductsController'
+	}).*/

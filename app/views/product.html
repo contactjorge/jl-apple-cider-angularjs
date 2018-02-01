@@ -1,0 +1,14 @@
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th scope="col">Product ID</th>
+		<th scope="col">Product Name</th>
+		<th scope="col">Product SKU</th>
+	</tr>
+	</thead>
+	<tr ng-repeat="product in products">
+		<td scope="col">{{ product._id["$oid"] }}</td>
+		<td scope="col">{{ product.name }}</td>
+		<td scope="col">{{ product.sku}}</td>
+	</tr>
+</table>
