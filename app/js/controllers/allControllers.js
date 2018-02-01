@@ -6,20 +6,24 @@ allControllers.controller('ProductsController',
 		var productsURL = 'https://api.mlab.com/api/1/databases/wondersign/collections/products?apiKey=B_o7qfV7j4diajcASjmKeB4sBzaBs76e';
 		var postProductURL = 'https://api.mlab.com/api/1/databases/wondersign/collections/products/59644b3df36d286340b27f66?apiKey=B_o7qfV7j4diajcASjmKeB4sBzaBs76e';
 		var updateURL = 'https://api.mlab.com/api/1/databases/wondersign/collections/products/59644b3df36d286340b27f66?apiKey=B_o7qfV7j4diajcASjmKeB4sBzaBs76e';
-		var products = [];
-		var _id = '';
-		var name = '';
-		var sku = '';
-		var product = '';
-		$scope.whicproduct = $routeParams.mId;
-		$scope.query = '';
 		
+		
+		$scope.whicproduct = $routeParams._id;
+		$scope.query = '';
+		$scope.direction = null;
+		$scope.prod_id = '';
+		$scope.prodName = '';
+		$scope.prodSku = '';
+		
+		var products = [];
+		var product = '';
 		
 		$http.get(productsURL).then(function (response){
 			$scope.products = response.data;
 			$scope.list = $scope.products;
 			$scope.productOrder = 'name';
 			$scope.productList = product.data;
+			$scope.postProduct = { _id:$scope.products._id, name:$scope.name, sku:$scope.sku };
 			
 		});
 
