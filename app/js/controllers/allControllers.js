@@ -3,6 +3,7 @@ var allControllers = angular.module('allControllers', []);
 allControllers.controller('ProductsController',
 	function ProductController($scope, $http){
 		var productURL = 'https://api.mlab.com/api/1/databases/wondersign/collections/products?apiKey=B_o7qfV7j4diajcASjmKeB4sBzaBs76e';
+		var productURL = 'https://api.mlab.com/api/1/databases/wondersign/collections/products/59644b3df36d286340b27f66?apiKey=B_o7qfV7j4diajcASjmKeB4sBzaBs76e';
 		
 		var products = [];
 		$http.get(productURL).then(function (response){

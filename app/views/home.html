@@ -1,6 +1,9 @@
 <!-- Need to change to a welcome banner -->
 
-s<div class="container" ng-controller="ProductsController" >
+
+
+
+<div class="container" ng-controller="ProductsController" >
 	<table class="table table-striped">
 		<thead>
 		<tr>
@@ -10,7 +13,7 @@ s<div class="container" ng-controller="ProductsController" >
 		</tr>
 		</thead>
 		<tr ng-repeat="product in products">
-			<td scope="col">{{ product._id["$oid"] }}</td>
+			<td scope="col">{{ product._id["$oid"] }}</td> <!-- $oid took a while to understand. Was overthinking it -->
 			<td scope="col">{{ product.name }}</td>
 			<td scope="col">{{ product.sku}}</td>
 		</tr>
